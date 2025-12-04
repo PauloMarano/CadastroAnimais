@@ -12,24 +12,22 @@ public class Menu {
         int escolha = 0;
         Scanner scanner = new Scanner(System.in);
         escolha = scanner.nextInt();
-        switch (escolha){
-            case 1 -> {
+        while (true) {
+            if ((int) escolha == 1) {
                 leituraArquivo.leitura_Perguntas();
-            }
-            case 2 -> {
-                System.out.println("2");
-            }
-            case 3 -> {
-                System.out.println("3");
-            }
-            case 4 -> {
-                System.out.println("4");
-            }
-            case 5 -> {
-                System.out.println("5");
-            }
-            case 6 -> {
-                System.out.println("Saindo do menu..");
+            } else if ((int) escolha == 2) {
+
+            } else if ((int) escolha == 3) {
+
+            } else if ((int) escolha == 4) {
+
+            } else if ((int) escolha == 5) {
+
+            } else if ((int) escolha == 6) {
+                System.out.println("Saindo Dom Menu, Obrigado");
+                break;
+            } else {
+                System.out.println("Caracter incorreta, tente novamente");
             }
         }
     }
