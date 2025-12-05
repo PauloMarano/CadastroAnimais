@@ -8,27 +8,36 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) throws IOException {
         LeituraArquivo leituraArquivo = new LeituraArquivo();
-        leituraArquivo.leitura_Cases();
-        int escolha = 0;
+        String escolha;
         Scanner scanner = new Scanner(System.in);
-        escolha = scanner.nextInt();
+        label:
         while (true) {
-            if ((int) escolha == 1) {
-                leituraArquivo.leitura_Perguntas();
-            } else if ((int) escolha == 2) {
-
-            } else if ((int) escolha == 3) {
-
-            } else if ((int) escolha == 4) {
-
-            } else if ((int) escolha == 5) {
-
-            } else if ((int) escolha == 6) {
-                System.out.println("Saindo Dom Menu, Obrigado");
-                break;
-            } else {
-                System.out.println("Caracter incorreta, tente novamente");
+            leituraArquivo.leitura_Cases();
+            escolha = scanner.nextLine();
+            switch (escolha) {
+                case "1":
+                    leituraArquivo.leitura_Perguntas();
+                    break;
+                case "2":
+                    System.out.println("Alterar os dados do pet cadastrado");
+                    break;
+                case "3":
+                    System.out.println("Deletar um pet cadastrado");
+                    break;
+                case "4":
+                    System.out.println("Listar todos os pets cadastrados\n");
+                    break;
+                case "5":
+                    System.out.println("Listar pets por algum critério (idade, nome, raça)\n");
+                    break;
+                case "6":
+                    System.out.println("Saindo Do Menu, Obrigado");
+                    break label;
+                default:
+                    System.out.println("Caracter incorreta, tente novamente");
+                    break;
             }
+
         }
     }
 }
