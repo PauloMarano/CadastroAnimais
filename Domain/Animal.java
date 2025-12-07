@@ -2,21 +2,51 @@ package desafioCadastroAnimais.Domain;
 
 public class Animal {
 
-    protected enum gatoOuCachorro{
-        GATO,CACHORRO;
+    protected String nome;
+    protected String endereco;
+    protected float idade;
+    protected float peso;
+    protected SexoAnimal sexoAnimal;
+    protected GatoOuChachorro gatoOuChachorro;
+
+    public Animal(String [] respostas) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.idade = idade;
+        this.peso = peso;
+        this.sexoAnimal = sexoAnimal;
+        this.gatoOuChachorro = gatoOuChachorro;
     }
 
-    protected enum sexo{
-        M,F;
+    public String getNome() {
+        return nome;
     }
 
-    protected String animal_Cadastro (String nome, String gatoOuCachorro, String endereco, String raca, String sexo, String idade, String  peso){
-         String[] animal = {nome, gatoOuCachorro, endereco, raca, sexo, idade, peso};
-         return nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public static void main(String[] args) {
-        Animal animal = new Animal();
-        String string = animal.animal_Cadastro("Joao", "Gato", "Avenida bla bla bla", "Cachorro", "M", "19", "8,9");
-        }
+    public String getEndereco() {
+        return endereco;
     }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public float getIdade() {
+        return idade;
+    }
+
+    public void setIdade(float idade) {
+        this.idade = idade;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+}

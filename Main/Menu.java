@@ -16,7 +16,8 @@ public class Menu {
             escolha = scanner.nextLine();
             switch (escolha) {
                 case "1":
-                    leituraArquivo.leitura_Perguntas();
+
+
                     break;
                 case "2":
                     System.out.println("Alterar os dados do pet cadastrado");
