@@ -19,7 +19,10 @@ public class Teste {
         String linha;
         while ((linha = bufferedReader.readLine()) != null) {
             System.out.println(linha);
-
+            String resposta = scanner.nextLine();
+            for (int i = 0; i < ; i++) {
+                respostas[i] = resposta;
+            }
         }
 
         Animal animal = new Animal(respostas);
