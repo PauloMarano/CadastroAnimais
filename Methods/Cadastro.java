@@ -15,19 +15,24 @@ public class Cadastro {
         File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        LeituraArquivo leituraArquivo = new LeituraArquivo();
         Scanner scanner = new Scanner(System.in);
         String[] respostas = new String[7];
         String linha;
         int i = 0;
-        while ((linha = bufferedReader.readLine()) != null) {
-            System.out.println(linha);
-            String resposta = scanner.nextLine().toUpperCase();
-            respostas[i] = resposta;
-            i += 1;
+        try {
+            while ((linha = bufferedReader.readLine()) != null) {
+                System.out.println(linha);
+                String resposta = scanner.nextLine().toUpperCase();
+                respostas[i] = resposta;
+                i += 1;
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            salvandoInformacoes.salvamento_respostas(respostas);
         }
         System.out.println("Salvando as informações");
-        salvandoInformacoes.salvamento_respostas(respostas);
     }
 }
 

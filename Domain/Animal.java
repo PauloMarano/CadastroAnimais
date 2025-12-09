@@ -10,16 +10,6 @@ public class Animal {
     protected SexoAnimal sexoAnimal;
     protected GatoOuCachorro gatoOuChachorro;
 
-    public Animal() {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.idade = idade;
-        this.peso = peso;
-        this.sexoAnimal = sexoAnimal;
-        this.gatoOuChachorro = gatoOuChachorro;
-        this.raca = raca;
-    }
-
     public String getNome() {
         return nome;
     }
