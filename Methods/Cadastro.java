@@ -32,7 +32,6 @@ public class Cadastro {
         finally {
             salvandoInformacoes.salvamento_respostas(respostas);
         }
-        System.out.println("Salvando as informações");
     }
 }
 

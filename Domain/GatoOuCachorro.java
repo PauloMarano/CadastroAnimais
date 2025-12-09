@@ -2,5 +2,7 @@ package desafioCadastroAnimais.Domain;
 
 public enum GatoOuCachorro {
     GATO,
-    CACHORRO
+    CACHORRO,
+    REPITIL,
+    PASSARO;
 }

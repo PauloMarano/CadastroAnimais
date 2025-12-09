@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) throws IOException {
         LeituraArquivo leituraArquivo = new LeituraArquivo();
-        Salvando_Informacoes salvandoInformacoes = new Salvando_Informacoes();
         String escolha;
         Scanner scanner = new Scanner(System.in);
         label:
@@ -38,7 +37,7 @@ public class Menu {
                         System.out.println("Saindo Do Menu, Obrigado");
                         break label;
                     default:
-                        System.out.println("Caracter incorreta, tente novamente");
+                        System.out.println("Não existe essa opção, tente novamente");
                         break;
                 }
             }
