@@ -42,7 +42,7 @@ public class Salvando_Informacoes {
         boolean fileNome = file.renameTo(fileRename);
         System.out.println("Cadastro Realizado: " + fileNome);
 
-        try (FileWriter fileWriter = new FileWriter(file);
+        try (FileWriter fileWriter = new FileWriter(fileRename);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);) {
             for (String string : animalFinal) {
                 bufferedWriter.write(string + "\n");
