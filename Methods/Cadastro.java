@@ -1,36 +1,33 @@
 package desafioCadastroAnimais.Methods;
 
+import desafioCadastroAnimais.Domain.Animal;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Stack;
 
-public class PerguntasCadastro {
-    Scanner scanner = new Scanner(System.in);
-
-    public static void ler_Perguntas() throws IOException {
+public class Cadastro {
+    public static void Perguntas() throws IOException {
+        Salvando_Informacoes salvandoInformacoes = new Salvando_Informacoes();
         File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String linha;
-        while ((linha = bufferedReader.readLine()) != null) {
-            System.out.println(linha);
-        }
-    }
-
-    public String[] Respostas() {
         LeituraArquivo leituraArquivo = new LeituraArquivo();
         Scanner scanner = new Scanner(System.in);
         String[] respostas = new String[7];
-        for (int i = 0; i < respostas.length; i++) {
-            String resposta = scanner.nextLine();
+        String linha;
+        int i = 0;
+        while ((linha = bufferedReader.readLine()) != null) {
+            System.out.println(linha);
+            String resposta = scanner.nextLine().toUpperCase();
             respostas[i] = resposta;
+            i += 1;
         }
-        for (String s : respostas) {
-            System.out.println(s);
-        }
-        return respostas;
+        System.out.println("Salvando as informações");
+        salvandoInformacoes.salvamento_respostas(respostas);
     }
 }
 

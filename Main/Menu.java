@@ -1,6 +1,8 @@
 package desafioCadastroAnimais.Main;
 
 import desafioCadastroAnimais.Methods.LeituraArquivo;
+import desafioCadastroAnimais.Methods.Cadastro;
+import desafioCadastroAnimais.Methods.Salvando_Informacoes;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -8,6 +10,7 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) throws IOException {
         LeituraArquivo leituraArquivo = new LeituraArquivo();
+        Salvando_Informacoes salvandoInformacoes = new Salvando_Informacoes();
         String escolha;
         Scanner scanner = new Scanner(System.in);
         label:
@@ -16,8 +19,7 @@ public class Menu {
             escolha = scanner.nextLine();
             switch (escolha) {
                 case "1":
-
-
+                    Cadastro.Perguntas();
                     break;
                 case "2":
                     System.out.println("Alterar os dados do pet cadastrado");

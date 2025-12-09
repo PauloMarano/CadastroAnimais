@@ -4,18 +4,20 @@ public class Animal {
 
     protected String nome;
     protected String endereco;
-    protected float idade;
-    protected float peso;
+    protected String raca;
+    protected String  idade;
+    protected String peso;
     protected SexoAnimal sexoAnimal;
-    protected GatoOuChachorro gatoOuChachorro;
+    protected GatoOuCachorro gatoOuChachorro;
 
-    public Animal(String [] respostas) {
+    public Animal() {
         this.nome = nome;
         this.endereco = endereco;
         this.idade = idade;
         this.peso = peso;
         this.sexoAnimal = sexoAnimal;
         this.gatoOuChachorro = gatoOuChachorro;
+        this.raca = raca;
     }
 
     public String getNome() {
@@ -34,19 +36,43 @@ public class Animal {
         this.endereco = endereco;
     }
 
-    public float getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(float idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
-    public float getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
+    }
+
+    public SexoAnimal getSexoAnimal() {
+        return sexoAnimal;
+    }
+
+    public void setSexoAnimal(SexoAnimal sexoAnimal) {
+        this.sexoAnimal = sexoAnimal;
+    }
+
+    public GatoOuCachorro getGatoOuChachorro() {
+        return gatoOuChachorro;
+    }
+
+    public void setGatoOuChachorro(GatoOuCachorro gatoOuChachorro) {
+        this.gatoOuChachorro = gatoOuChachorro;
+    }
+
+    public String getRaca() {
+        return raca;
+    }
+
+    public void setRaca(String raca) {
+        this.raca = raca;
     }
 }
