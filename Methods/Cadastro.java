@@ -1,6 +1,8 @@
 package desafioCadastroAnimais.Methods;
 
 import desafioCadastroAnimais.Domain.Animal;
+import desafioCadastroAnimais.Domain.GatoOuCachorro;
+import desafioCadastroAnimais.Domain.SexoAnimal;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,12 +28,14 @@ public class Cadastro {
                 respostas[i] = resposta;
                 i += 1;
             }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         finally {
             salvandoInformacoes.salvamento_respostas(respostas);
         }
+
     }
 }
 
