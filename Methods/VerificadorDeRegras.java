@@ -14,6 +14,7 @@ public class VerificadorDeRegras {
                 System.out.println("Peso do seu pet Invalido");
                 verifique = true;
             }
+
             if (verifique){
                 System.out.println("Tente Novamente");
             }
