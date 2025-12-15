@@ -3,6 +3,7 @@ package desafioCadastroAnimais.Methods;
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Domain.GatoOuCachorro;
 import desafioCadastroAnimais.Domain.SexoAnimal;
+import desafioCadastroAnimais.Regexs.Regexs;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class Salvando_Informacoes {
     public void salvamento_respostas(String[] respostas) {
         VerificadorDeRegras verificadorDeRegras = new VerificadorDeRegras();
+        Regexs regexs = new Regexs();
         String nome = respostas[0];
         String raca = respostas[6];
         SexoAnimal sexo = SexoAnimal.valueOf(respostas[2].toUpperCase());
@@ -21,7 +23,7 @@ public class Salvando_Informacoes {
         GatoOuCachorro gatoOuCachorro = GatoOuCachorro.valueOf(respostas[1].toUpperCase());
 
         Animal animal = new Animal(nome, endereco, raca, idade, peso, sexo, gatoOuCachorro);
-        if (verificadorDeRegras.verificador(animal))return;
+        if (verificadorDeRegras.verificador(animal)) return;
         else {
             String nomeArquivo = animal.getNome() + ".txt";
             String[] animalFinal = {"Nome: " + nome, "Endereco: " + endereco, ("Idade: ") + idade.toString(), "Peso: " + (peso.toString()), "Sexo: " + sexo.toString(), "Tipo: " + gatoOuCachorro.toString(), "Raca: " + raca};

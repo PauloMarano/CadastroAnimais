@@ -3,6 +3,7 @@ package desafioCadastroAnimais.Methods;
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Domain.GatoOuCachorro;
 import desafioCadastroAnimais.Domain.SexoAnimal;
+import desafioCadastroAnimais.Regexs.Regexs;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,6 +14,7 @@ import java.util.Stack;
 
 public class Cadastro {
     public static void Perguntas() throws IOException {
+        Regexs regexs = new Regexs();
         Salvando_Informacoes salvandoInformacoes = new Salvando_Informacoes();
         File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
@@ -25,9 +27,12 @@ public class Cadastro {
             while ((linha = bufferedReader.readLine()) != null) {
                 System.out.println(linha);
                 String resposta = scanner.nextLine().toUpperCase();
-                respostas[i] = resposta;
+                if (regexs.naoInformado(resposta).equals(resposta))
+                    resposta = "Nao Informado";
+                respostas[i] = resposta.toUpperCase();
                 i += 1;
             }
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);

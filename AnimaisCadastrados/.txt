@@ -1,0 +1,7 @@
+Nome: 
+Endereco: 
+Idade: 9.0
+Peso: 3.0
+Sexo: M
+Tipo: CACHORRO
+Raca: 
