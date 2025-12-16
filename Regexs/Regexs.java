@@ -14,7 +14,7 @@ public class Regexs {
     }
 
     public String nomeComposto(String texto) {
-        String regex = "^\\s*\\S+\\s+\\S+\\s*$";
+        String regex = "^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
         return regex;
@@ -27,4 +27,10 @@ public class Regexs {
         return regex;
     }
 
+    public String filtroRaca(String texto) {
+        String regex = "^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s*$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(texto);
+        return regex;
+    }
 }

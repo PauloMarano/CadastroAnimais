@@ -16,12 +16,16 @@ public class VerificadorDeRegras {
                 System.out.println("Peso do seu pet Invalido");
                 verifique = true;
             }
-            if (animal.getNome().equals(regexs.naoInformado(animal.getNome()))){
+            if (animal.getNome().equals(regexs.naoInformado(animal.getNome()))) {
                 System.out.println("Voce nao pode cadastrar um pet sem nome");
                 verifique = true;
             }
-            if (!animal.getNome().equals(regexs.nomeComposto(animal.getNome()))){
-                System.out.println("Voce nao pode cadastrar um pet só com o nome, \n precisa de um sobrenome! \n");
+            if (!animal.getNome().equals(regexs.nomeComposto(animal.getNome()))) {
+                System.out.println("Nome do pet Invalido, Tente novamente");
+                verifique = true;
+            }
+            if (!animal.getRaca().equals(regexs.filtroRaca(animal.getRaca()))) {
+                System.out.println("Raca Invalida, Tente novamente");
                 verifique = true;
             }
         }

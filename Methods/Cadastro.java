@@ -2,6 +2,7 @@ package desafioCadastroAnimais.Methods;
 
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Domain.GatoOuCachorro;
+import desafioCadastroAnimais.Domain.NaoInformado;
 import desafioCadastroAnimais.Domain.SexoAnimal;
 import desafioCadastroAnimais.Regexs.Regexs;
 
@@ -28,7 +29,7 @@ public class Cadastro {
                 System.out.println(linha);
                 String resposta = scanner.nextLine().toUpperCase();
                 if (regexs.naoInformado(resposta).equals(resposta))
-                    resposta = "Nao Informado";
+                    resposta = NaoInformado.NAO_INFORMADO;;
                 respostas[i] = resposta.toUpperCase();
                 i += 1;
             }
