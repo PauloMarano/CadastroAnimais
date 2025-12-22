@@ -5,32 +5,43 @@ import java.util.regex.Pattern;
 
 public class Regexs {
 
-    public String apenasLetras(String texto) {
+    public boolean apenasLetras(String texto) {
+        if (texto == null) {
+            return true;
+        }
         String regex = "([A-Za-z])";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
-
-        return regex;
+        return matcher.matches();
     }
 
-    public String nomeComposto(String texto) {
+    public boolean nomeComposto(String texto) {
+        if (texto == null) {
+            return true;
+        }
         String regex = "^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
-        return regex;
+        return matcher.matches();
     }
 
-    public String naoInformado(String texto) {
+    public boolean filtroRaca(String texto) {
+        if (texto == null) {
+            return true;
+        }
+        String regex = "^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s*$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(texto);
+        return matcher.matches();
+    }
+
+    public static boolean naoInformado(String texto) {
+        if (texto == null) {
+            return true;
+        }
         String regex = "^\\s*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
-        return regex;
-    }
-
-    public String filtroRaca(String texto) {
-        String regex = "^\\s*[a-zA-Z]+\\s+[a-zA-Z]+\\s*$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(texto);
-        return regex;
+        return matcher.matches();
     }
 }

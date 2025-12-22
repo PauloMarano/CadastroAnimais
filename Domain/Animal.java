@@ -5,19 +5,13 @@ public class Animal {
     protected String nome;
     protected String endereco;
     protected String raca;
-    protected Double  idade;
-    protected Double peso;
+    protected String idade;
+    protected String peso;
     protected SexoAnimal sexoAnimal;
     protected GatoOuCachorro gatoOuChachorro;
+    public final static String NAO_INFORMADO = "NAO_INFORMADO";
 
-    public Animal(String nome, String endereco, String raca, Double idade, Double peso, SexoAnimal sexoAnimal, GatoOuCachorro gatoOuChachorro) {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.raca = raca;
-        this.idade = idade;
-        this.peso = peso;
-        this.sexoAnimal = sexoAnimal;
-        this.gatoOuChachorro = gatoOuChachorro;
+    public Animal() {
     }
 
     public String getNome() {
@@ -36,19 +30,19 @@ public class Animal {
         this.endereco = endereco;
     }
 
-    public Double getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(Double idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
-    public Double getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(Double peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 
@@ -75,4 +69,5 @@ public class Animal {
     public void setRaca(String raca) {
         this.raca = raca;
     }
+
 }

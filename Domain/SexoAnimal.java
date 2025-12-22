@@ -1,8 +1,7 @@
 package desafioCadastroAnimais.Domain;
 
 public enum SexoAnimal {
-    M {
-        },
-    F{
-    };
+    M,
+    F,
+    NAO_INFORMADO;
 }

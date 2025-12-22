@@ -4,5 +4,6 @@ public enum GatoOuCachorro {
     GATO,
     CACHORRO,
     REPITIL,
-    PASSARO;
+    PASSARO,
+    NAO_INFORMADO;
 }
