@@ -8,12 +8,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Salvando_Informacoes {
 
     public void salvamento_respostas(String[] respostas) {
-        LocalDate localDate = LocalDate.now();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyyyy'T'HHmm-");
+        String dataHora = localDateTime.format(dateTimeFormatter);
         VerificadorDeRegras verificadorDeRegras = new VerificadorDeRegras();
 
         Regexs regexs = new Regexs();
@@ -31,11 +34,10 @@ public class Salvando_Informacoes {
 
         if (verificadorDeRegras.verificador(animal)) return;
         else {
-            String nomeArquivo = animal.getNome() + localDate + ".txt";
+            String nomeArquivo = dataHora + Regexs.removerEspacos(animal.getNome()) + ".txt";
             String[] animalFinal = {"Nome: " + animal.getNome(), "Endereco: " + animal.getEndereco(), ("Idade: ") + animal.getIdade(), "Peso: " + animal.getPeso(), "Sexo: " + animal.getSexoAnimal(), "Tipo: " + animal.getGatoOuChachorro(), "Raca: " + animal.getRaca()};
 
             File file = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\AnimaisCadastrados\\file.txt");
-
             try {
                 boolean newFile = file.createNewFile();
             } catch (IOException e) {

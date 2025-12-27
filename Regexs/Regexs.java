@@ -44,4 +44,8 @@ public class Regexs {
         Matcher matcher = pattern.matcher(texto);
         return matcher.matches();
     }
+
+    public static String removerEspacos(String texto) {
+        return texto.replaceAll("\\s+", "");
+    }
 }

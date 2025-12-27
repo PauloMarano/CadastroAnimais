@@ -19,7 +19,7 @@ public class VerificadorDeRegras {
                     verifique = true;
                 }
             }
-            if (regexs.nomeComposto(animal.getNome())) {
+            if (!regexs.nomeComposto(animal.getNome())) {
                 System.out.println("Nome do pet Invalido, Tente novamente");
                 verifique = true;
             }
