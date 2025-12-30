@@ -3,7 +3,7 @@ package desafioCadastroAnimais.Regexs;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Regexs {
+public class Regexs_Case1 {
 
     public boolean apenasLetras(String texto) {
         if (texto == null) {

@@ -1,7 +1,7 @@
-package desafioCadastroAnimais.Methods;
+package desafioCadastroAnimais.Methods.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Regexs.Regexs;
+import desafioCadastroAnimais.Regexs.Regexs_Case1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,7 +27,7 @@ public class Cadastro {
                 System.out.println(linha);
                 String resposta = scanner.nextLine().toUpperCase();
                 respostas[i] = resposta.toUpperCase();
-                if (Regexs.naoInformado(respostas[i])){
+                if (Regexs_Case1.naoInformado(respostas[i])){
                     respostas[i] = Animal.NAO_INFORMADO;
                 }
                 i += 1;

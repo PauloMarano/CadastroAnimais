@@ -1,9 +1,10 @@
-package desafioCadastroAnimais.Methods;
+package desafioCadastroAnimais.Methods.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Domain.GatoOuCachorro;
 import desafioCadastroAnimais.Domain.SexoAnimal;
-import desafioCadastroAnimais.Regexs.Regexs;
+import desafioCadastroAnimais.Regexs.Regexs_Case1;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -12,16 +13,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Salvando_Informacoes {
-
     public void salvamento_respostas(String[] respostas) {
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyyyy'T'HHmm-");
         String dataHora = localDateTime.format(dateTimeFormatter);
         VerificadorDeRegras verificadorDeRegras = new VerificadorDeRegras();
 
-        Regexs regexs = new Regexs();
+        Regexs_Case1 regexs = new Regexs_Case1();
         Animal animal = new Animal();
-
 
         animal.setNome(respostas[0]);
         animal.setRaca(respostas[6]);
@@ -31,10 +30,9 @@ public class Salvando_Informacoes {
         animal.setPeso(respostas[4]);
         animal.setIdade(respostas[5]);
 
-
         if (verificadorDeRegras.verificador(animal)) return;
         else {
-            String nomeArquivo = dataHora + Regexs.removerEspacos(animal.getNome()) + ".txt";
+            String nomeArquivo = dataHora + Regexs_Case1.removerEspacos(animal.getNome()) + ".txt";
             String[] animalFinal = {"Nome: " + animal.getNome(), "Endereco: " + animal.getEndereco(), ("Idade: ") + animal.getIdade(), "Peso: " + animal.getPeso(), "Sexo: " + animal.getSexoAnimal(), "Tipo: " + animal.getGatoOuChachorro(), "Raca: " + animal.getRaca()};
 
             File file = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\AnimaisCadastrados\\file.txt");
@@ -48,13 +46,24 @@ public class Salvando_Informacoes {
             boolean fileNome = file.renameTo(fileRename);
             System.out.println("Cadastro Realizado: " + fileNome);
 
-
             try (FileWriter fileWriter = new FileWriter(fileRename);
                  BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);) {
                 for (String string : animalFinal) {
                     bufferedWriter.write(string + "\n");
                     bufferedWriter.flush();
                 }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            try (FileWriter fileWriter = new FileWriter("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Domain\\animaisCadastradosJuntos", true);
+                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+                for (String string : animalFinal) {
+                    bufferedWriter.write(string + "\n");
+                    bufferedWriter.flush();
+                }
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

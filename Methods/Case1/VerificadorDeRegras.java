@@ -1,12 +1,12 @@
-package desafioCadastroAnimais.Methods;
+package desafioCadastroAnimais.Methods.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Regexs.Regexs;
+import desafioCadastroAnimais.Regexs.Regexs_Case1;
 
 
 public class VerificadorDeRegras {
     public boolean verificador(Animal animal) {
-        Regexs regexs = new Regexs();
+        Regexs_Case1 regexs = new Regexs_Case1();
         boolean verifique = false;
         for (int i = 0; i < 1; i++) {
             if (!animal.getPeso().equals(Animal.NAO_INFORMADO)) {
